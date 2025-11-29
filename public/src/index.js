@@ -1,14 +1,14 @@
 // src/index.js
 import React from "react";
-import { createRoot } from "react-dom/client";
+import { createRoot } from "react-dom/client"; // React 18+
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-import "./styles/global.css"; // adjust path if your global css is elsewhere
+import "./styles/global.css"; // adjust or remove if your CSS path differs
 
-// Find the root element in public/index.html
+// Ensure public/index.html contains: <div id="root"></div>
 const container = document.getElementById("root");
 if (!container) {
-  throw new Error("Root element not found. Ensure public/index.html contains <div id=\"root\"></div>");
+  throw new Error('Root element not found. Make sure public/index.html has <div id="root"></div>');
 }
 
 createRoot(container).render(
